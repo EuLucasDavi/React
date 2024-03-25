@@ -1,0 +1,15 @@
+body {
+  font-family: Arial;
+  background-color: #f4f4f4;
+  padding: 30px;
+  color: #333;
+  background-image: url('./img/bg4.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.app{
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #efefef;
+}
