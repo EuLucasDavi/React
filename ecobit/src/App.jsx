@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import "./App.css";
+import Ecopontos from './components/Ecopontos'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -109,22 +110,12 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Lista de Ecopontos</h1>
-      <div className="eco-list"></div>
-      {todos.map((ecopoint) => (
-        <div className='ecopoint'>
-          <br />
-          <div className="content">
-            <p>{ecopoint.nome}</p>
-            <p className="neighborhood">{ecopoint.bairro}</p>
-            <p className="city">({ecopoint.cidade})</p>
-            <p className="saturday">{ecopoint.sabado}</p>
-          </div>
-          <div>
-            <button>Detalhes</button>
-          </div>
-        </div>
-      ))}
+      <h1>Ecopontos</h1>
+      <div className="eco-list">
+        {todos.map((ecopoint) => (
+          <Ecopontos ecopoint={ecopoint} />
+        ))}
+      </div>
     </div>
   )
 }
