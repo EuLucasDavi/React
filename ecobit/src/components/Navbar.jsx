@@ -21,10 +21,10 @@ function EcoNav() {
           >
             <Nav variant="tabs" defaultActiveKey="#">
               <Nav.Item>
-                <Nav.Link href="#" className='bg-success text-white p-2'>Home</Nav.Link>
+                <Nav.Link href="#" className='nav-link-custom'>Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="link-1" className='bg-success text-white p-2'>Ecopontos</Nav.Link>
+                <Nav.Link eventKey="link-1" className='nav-link-custom'>Ecopontos</Nav.Link>
               </Nav.Item>
             </Nav>
           </Nav>
@@ -35,7 +35,7 @@ function EcoNav() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="btn btn-success"><i className="fa fa-search"></i> </Button>
+            <Button variant="btn btn-success custom-btn"><i className="fa fa-search"></i> </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

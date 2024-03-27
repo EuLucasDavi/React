@@ -3,3 +3,11 @@
   width: 100%;
 }
 
+.nav-link-custom {
+  color: #0d3817;
+  transition: color 0.3s;
+}
+
+.nav-link-custom:hover {
+  color: #fff;
+}
