@@ -1,17 +1,26 @@
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
-import Logo from '../img/nav-logo.png';
+import Logo from '../../img/nav-logo.png';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useLocation } from 'react-router-dom'; 
 
 function EcoNav() {
+  const location = useLocation(); 
+  const [activePage, setActivePage] = useState(location.pathname); 
+
+  const handleSetActivePage = (path) => {
+    setActivePage(path);
+  };
+
   return (
     <Navbar expand="lg" className="custom-navbar">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={Logo} width="80" height="28" /></Navbar.Brand>
+        <Navbar.Brand href="/"><img src={Logo} width="80" height="28" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,12 +28,15 @@ function EcoNav() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav variant="tabs" defaultActiveKey="#">
+            <Nav variant="tabs">
               <Nav.Item>
-                <Nav.Link href="#" className='nav-link-custom'>Home</Nav.Link>
+                <Nav.Link href="/" className={`nav-link-custom ${activePage === "/" && "active"}`} onClick={() => handleSetActivePage('/')}>Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="link-1" className='nav-link-custom'>Ecopontos</Nav.Link>
+                <Nav.Link href="/Ecopontos" className={`nav-link-custom ${activePage === "/Ecopontos" && "active"}`} onClick={() => handleSetActivePage('/Ecopontos')}>Ecopontos</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="/Register" className={`nav-link-custom ${activePage === "/Register" && "active"}`} onClick={() => handleSetActivePage('/Register')}>Cadastre-se</Nav.Link>
               </Nav.Item>
             </Nav>
           </Nav>
